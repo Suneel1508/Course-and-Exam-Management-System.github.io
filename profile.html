@@ -1,0 +1,121 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+h1 {
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 30px;
+  padding: 50px 50px;
+  text-align: center;
+  margin-left:auto;
+  margin-right:auto;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+}
+
+h1.elegantshadow {
+  color: #131313;
+  letter-spacing: 0.15em;
+  text-shadow: 1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #767474, -3px 6px 1px #787777, -4px 8px 1px #7b7a7a, -5px 10px 1px #7f7d7d, -6px 12px 1px #828181, -7px 14px ;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+body {
+  display: grid;
+  place-items: center;
+  margin-top: 10px;
+  background-image: url("http://youve-reached-the-apex.weebly.com/uploads/7/1/8/8/71880077/2620393_orig.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: "Trebuchet MS";
+}
+
+#para-1 {
+  font-size: 25px;
+}
+
+</style>
+<body>
+
+  <div class="navbar">
+    <a href="HomePage.html"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a class="active" href="#"><i class="fa fa-fw fa-globe"></i> Profile</a>
+    <a href="login.html"><i class="fa fa-fw fa-user"></i> Logout</a>
+  </div>
+
+<h1 class='elegantshadow'>Hello <span id="UserName"></span>....!!!!</h1>
+
+<script>
+
+document.getElementById("UserName").innerHTML = localStorage.getItem("UserName");
+var courses = localStorage.getItem("RegisteredCourses");
+courses = JSON.parse(courses);
+var ecourses = localStorage.getItem("RegisteredExams");
+ecourses = JSON.parse(ecourses);
+
+if (courses.length === 0)
+{
+  document.write("<strong>");
+  document.write('<p id="para-1">'+"There are no Course(s) Enrolled."+'</p>');
+  document.write("</strong>");
+}
+else{
+  document.write("<strong>");
+  document.write('<p id="para-1">'+"These are your Enrolled Course(s):"+'</p>');
+  document.write("</strong>");
+
+  document.write("<ul>");
+  for (i = 0; i < courses.length; i++) {
+    document.write("<li>" + courses[i] + "</li>");
+  }
+  document.write("</ul>");
+}
+
+if (ecourses.length === 0)
+{
+  document.write("<strong>");
+  document.write('<p id="para-1">'+"There are no Course(s) Enrolled for Exam."+'</p>');
+  document.write("</strong>");
+}
+else{
+  document.write("<strong>");
+  document.write('<p id="para-1">'+"These are the Course(s) you enrolled for Exam:"+'</p>');
+  document.write("</strong>");
+  document.write("<ul>");
+  for (i = 0; i < ecourses.length; i++) {
+    document.write("<li>" + ecourses[i] + "</li>");
+  }
+  document.write("</ul>");
+}
+
+</script>
+</body>

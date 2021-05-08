@@ -1,0 +1,506 @@
+<html>
+<head>
+<style>
+
+h1 {
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 50px;
+  padding: 40px 50px;
+  text-align: center;
+  margin-left:auto;
+  margin-right:auto;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+}
+
+h2 {
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 30px;
+  padding: 10px 20px;
+  text-align: center;
+  margin-left:auto;
+  margin-right:auto;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+}
+
+h1.deepshadow {
+  color: #e0dfdc;
+  background-color: #333;
+  letter-spacing: 0.1em;
+  text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212, 0 22px 30px rgba(0, 0, 0, 0.9);
+}
+
+h2.retroshadow {
+  color: #2c2c2c;
+  background-color: #d4dca9;
+  letter-spacing: 0.05em;
+  text-shadow: 4px 4px 0px #d5d5d5, 7px 7px 0px rgba(0, 0, 0, 0.2);
+  margin-left:auto;
+  margin-right:auto;
+}
+
+
+.button1 {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f2746b;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button1 span:after {
+  content: '\00ab';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -20px;
+  transition: 0.5s;
+}
+
+.button1:hover span {
+  padding-left: 25px;
+}
+
+.button1:hover span:after {
+  opacity: 1;
+  left: 0;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #118c8b;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#adjusting{
+  text-align: center;
+}
+
+*{
+  font-family: sans-serif;
+}
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 1 em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+}
+
+.content-table thead tr {
+  background-color: #0abda0;
+  color: #d4dca9;
+  text-align: center;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #0abda0;
+  color: #80add7;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #ebf2ea;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #0abda0;
+}
+
+.content-table tbody tr.active-row {
+  color: #bf9d7a;
+}
+
+</style>
+</head>
+<body>
+  <h1 class='deepshadow'>Course Registration</h1>
+  <h2 class='retroshadow'>Choose your preffered course(s)</h2>
+<table class="content-table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>S.no</th>
+      <th>Course Code</th>
+      <th>Course Title</th>
+      <th>Stream</th>
+      <th>Category</th>
+      <th>Credits</th>
+      <th>Course Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><input type="checkbox" id="Programming with JAVA" class="checks" value="java"></td>
+      <td>1</td>
+      <td>EID202</td>
+      <td>Programming with JAVA</td>
+      <td rowspan="5"><strong>Computer Science Engineering</strong></td>
+      <td>BE</td>
+      <td>5</td>
+      <td>Theory and Lab</td>
+    </tr>
+    <tr class="active-row">
+      <td><input type="checkbox" id="Data Structures with C" class="checks" value="dsc"></td>
+      <td>2</td>
+      <td>EID102</td>
+      <td>Data Structures with C</td>
+      <td>BE</td>
+      <td>6</td>
+      <td>Theory and Lab</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id="Formal Languages and Automata Theory" class="checks" value="flat"></td>
+      <td>3</td>
+      <td>EID305</td>
+      <td>Formal Languages and Automata Theory</td>
+      <td>CE</td>
+      <td>3</td>
+      <td>Theory Only</td>
+    </tr>
+    <tr class="active-row">
+      <td><input type="checkbox" id="Operating Systems" class="checks" value="os"></td>
+      <td>4</td>
+      <td>EID204</td>
+      <td>Operating Systems</td>
+      <td>CE</td>
+      <td>5</td>
+      <td>Theory and Lab</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id="Computer Networks" class="checks" value="cn"></td>
+      <td>5</td>
+      <td>EID206</td>
+      <td>Computer Networks</td>
+      <td>CE</td>
+      <td>4</td>
+      <td>Theory Only</td>
+    </tr>
+      <tr class="active-row">
+        <td><input type="checkbox" id="Basic Electronics Engineering" class="checks" value="bee"></td>
+        <td>6</td>
+        <td>EEC101</td>
+        <td>Basic Electronics Engineering</td>
+        <td rowspan="5"><strong>Electronics and Communications Engineering</strong></td>
+        <td>BE</td>
+        <td>5</td>
+        <td>Theory and Lab</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id="Signals and Systems" class="checks" value="ss"></td>
+      <td>7</td>
+      <td>EUREC302</td>
+      <td>Signals and Systems</td>
+      <td>CE</td>
+      <td>3</td>
+      <td>Theory Only</td>
+    </tr>
+    <tr class="active-row">
+      <td><input type="checkbox" id="Fundamentals of Digital Logic Circuits" class="checks" value="fdlc"></td>
+      <td>8</td>
+      <td>EID104</td>
+      <td>Fundamentals of Digital Logic Circuits</td>
+      <td>BE</td>
+      <td>6</td>
+      <td>Theory and Lab</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id="Digital Logic Design" class="checks" value="dld"></td>
+      <td>9</td>
+      <td>EUREC401</td>
+      <td>Digital Logic Design</td>
+      <td>CE</td>
+      <td>5</td>
+      <td>Theory and Lab</td>
+    </tr>
+    <tr class="active-row">
+      <td><input type="checkbox" id="Basic Circuit Theory" class="checks" value="bct"></td>
+      <td>10</td>
+      <td>EUREC303</td>
+      <td>Basic Circuit Theory</td>
+      <td>BE</td>
+      <td>3</td>
+      <td>Theory Only</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id="Thermodynamics" class="checks" value="thermo"></td>
+      <td>11</td>
+      <td>EME101</td>
+      <td>Thermodynamics</td>
+      <td rowspan="5"><strong>Mechanical Engineering</strong></td>
+      <td>BE</td>
+      <td>3</td>
+      <td>Theory Only</td>
+    </tr>
+    <tr class="active-row">
+      <td><input type="checkbox" id="Machine Drawing" class="checks" value="md"></td>
+      <td>12</td>
+      <td>EME225</td>
+      <td>Machine Drawing</td>
+      <td>CE</td>
+      <td>6</td>
+      <td>Theory and Lab</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id="Fluid Mechanics" class="checks" value="fm"></td>
+      <td>13</td>
+      <td>EME208</td>
+      <td>Fluid Mechanics</td>
+      <td>CE</td>
+      <td>3</td>
+      <td>Theory Only</td>
+    </tr>
+    <tr class="active-row">
+      <td><input type="checkbox" id="Computational Methods in Mechanical Engineering" class="checks" value="cmme"></td>
+      <td>14</td>
+      <td>EME307</td>
+      <td>Computational Methods in Mechanical Engineering</td>
+      <td>CE</td>
+      <td>5</td>
+      <td>Theory and Lab</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id="Engineering Graphics" class="checks" value="eg"></td>
+      <td>15</td>
+      <td>EME123</td>
+      <td>Engineering Graphics</td>
+      <td>BE</td>
+      <td>4</td>
+      <td>Theory Only</td>
+    </tr>
+    <tr class="active-row">
+      <td><input type="checkbox" id="Engineering Materials" class="checks" value="em"></td>
+      <td>16</td>
+      <td>ECE102</td>
+      <td>Engineering Materials</td>
+      <td rowspan="5"><strong>Civil Engineering</strong></td>
+      <td>BE</td>
+      <td>3</td>
+      <td>Theory Only</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id="Concrete Technology" class="checks" value="ct"></td>
+      <td>17</td>
+      <td>ECE207</td>
+      <td>Concrete Technology</td>
+      <td>CE</td>
+      <td>5</td>
+      <td>Theory and Lab</td>
+    </tr>
+    <tr class="active-row">
+      <td><input type="checkbox" id="Soil Mechanics" class="checks" value="sm"></td>
+      <td>18</td>
+      <td>ECE202</td>
+      <td>Soil Mechanics</td>
+      <td>CE</td>
+      <td>5</td>
+      <td>Theory and Lab</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id="Environmental Studies" class="checks" value="es"></td>
+      <td>19</td>
+      <td>EHS201</td>
+      <td>Environmental Studies</td>
+      <td>BE</td>
+      <td>3</td>
+      <td>Theory Only</td>
+    </tr>
+    <tr class="active-row">
+      <td><input type="checkbox" id="Highway Engineering" class="checks" value="he"></td>
+      <td>20</td>
+      <td>ECE208</td>
+      <td>Highway Engineering</td>
+      <td>CE</td>
+      <td>4</td>
+      <td>Theory Only</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id="Organizational Behaviour" class="checks" value="ob"></td>
+      <td>21</td>
+      <td>EHS302</td>
+      <td>Organizational Behaviour</td>
+      <td rowspan="5"><strong>Management Courses</strong></td>
+      <td>IE</td>
+      <td>3</td>
+      <td>Theory Only</td>
+    </tr>
+    <tr class="active-row">
+      <td><input type="checkbox" id="Business Ethics and Corporate Governance" class="checks" value="becg"></td>
+      <td>22</td>
+      <td>EHS304</td>
+      <td>Business Ethics and Corporate Governance</td>
+      <td>IE</td>
+      <td>3</td>
+      <td>Theory Only</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id="Project Management" class="checks" value="pm"></td>
+      <td>23</td>
+      <td>EHS401</td>
+      <td>Project Management</td>
+      <td>IE</td>
+      <td>3</td>
+      <td>Theory Only</td>
+    </tr>
+    <tr class="active-row">
+      <td><input type="checkbox" id="Disaster Management" class="checks" value="dm"></td>
+      <td>24</td>
+      <td>EHS403</td>
+      <td>Disaster Management</td>
+      <td>IE</td>
+      <td>3</td>
+      <td>Theory Only</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id="Operations ans Supply Chain Management" class="checks" value="oscm"></td>
+      <td>25</td>
+      <td>EHS402</td>
+      <td>Operations ans Supply Chain Management</td>
+      <td>IE</td>
+      <td>3</td>
+      <td>Theory Only</td>
+    </tr>
+    <tr class="active-row">
+      <td><input type="checkbox" id="Basics of Remote Sensing and GIS" class="checks" value="brsg"></td>
+      <td>26</td>
+      <td>ECE453</td>
+      <td>Basics of Remote Sensing and GIS</td>
+      <td rowspan="5"><strong>Professional Courses</strong></td>
+      <td>IE</td>
+      <td>3</td>
+      <td>Theory Only</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id="Introduction to Microcontrollers" class="checks" value="im"></td>
+      <td>27</td>
+      <td>EEC464</td>
+      <td>Introduction to Microcontrollers</td>
+      <td>IE</td>
+      <td>3</td>
+      <td>Theory Only</td>
+    </tr>
+    <tr class="active-row">
+      <td><input type="checkbox" id="Fundamentals of Global Positioning Systems" class="checks" value="egps"></td>
+      <td>28</td>
+      <td>EEC465</td>
+      <td>Fundamentals of Global Positioning Systems</td>
+      <td>IE</td>
+      <td>3</td>
+      <td>Theory Only</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id="Fundamentals of Speech Processing" class="checks" value="fsp"></td>
+      <td>29</td>
+      <td>EEC466</td>
+      <td>Fundamentals of Speech Processing</td>
+      <td>IE</td>
+      <td>3</td>
+      <td>Theory Only</td>
+    </tr>
+    <tr class="active-row">
+      <td><input type="checkbox" id="Optimization Techniques" class="checks" value="ot"></td>
+      <td>30</td>
+      <td>EME384</td>
+      <td>Optimization Techniques</td>
+      <td>IE</td>
+      <td>3</td>
+      <td>Theory Only</td>
+    </tr>
+  </tbody>
+</table>
+<div id="adjusting">
+<button class="button" style="vertical-align:middle" onclick="validate();"><span>Submit</span></button> <br>
+<button class="button1" style="vertical-align:middle" onclick="document.location='HomePage.html'"><span>Back</span></button>
+</div>
+
+
+<script type="text/javascript">
+
+function validate(){
+  var checks = document.getElementsByClassName('checks');
+  var count=0;
+  var arr = new Array();
+
+  for(i=0;i<30;i++){
+    if(checks[i].checked == true){
+      arr[count] = checks[i].id;
+      count++;
+    }
+  }
+    if(count>4){
+    var x = confirm("Are you sure, you want to Submit ?");
+    if(x==true){
+      localStorage.setItem("RegisteredCourses", JSON.stringify(arr));
+      localStorage.setItem("Count",count);
+    window.alert("Courses Registered Successfully");
+    setTimeout(function() {window.location = "SuccessfulCourse.html" })
+  }
+}
+    else
+    window.alert("Select atleast 5 Courses");
+}
+
+</script>
+
+</body>
+</html>

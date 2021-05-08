@@ -1,0 +1,209 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+* {box-sizing: border-box;}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: #7fe8ec;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+.btn {
+  background-color: #ef7c9d;
+  color: #03353e;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.btn1 {
+  background-color: #ef7c9d;
+  color: #03353e;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.btn1:hover {
+  opacity: 1;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8uegZSBSh9D91ddWIkIzXyRniwwfsljdyeQ&usqp=CAU");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: "Trebuchet MS";
+}
+
+h4 {
+color: #942124;
+}
+
+
+.column {
+float: left;
+width: 25%;
+padding: 10px;
+height: 300px;
+}
+
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+
+.column1 {
+  float: left;
+  padding: 10px;
+  height: 300px;
+}
+
+.left {
+  width: 70%;
+}
+
+.right {
+  width: 30%;
+  margin-top: 200px;
+}
+
+hr.new2 {
+border-top: 1px dashed orange;
+}
+
+</style>
+</head>
+<body onload="clearLocalStorage()"><center>
+
+<div class="row">
+  <div class="column1 left" >
+  <div class="header-logos-sm"><a href="https://gitam.edu/"><img class="lazyload" src="https://gitam.edu/assets/images/logo-sm.jpg " alt="GITAM logo"> </a>
+  </div> <br>
+<img src="https://getmyuni.azureedge.net/college-image/big/gandhi-institute-of-technology-and-management-gitam-vishakhapatnam.jpg" alt="gitam image" width="400" height="250">
+<img src="https://www.gitam.edu/campus_cms/assets/uploads/slider/1591084273_slider.jpg" alt="gitam image" width="400" height="250">
+<img src="https://www.gitam.edu/assets/images/campus/bengaluru-campus-image.jpg" alt="gitam image" width="400" height="250">
+<hr class="new2">
+<div class="row">
+  	        <div class="column">
+                <h4>Central Administrative Office</h4>
+                <p>Gandhi nagar, Rushikonda<br> Visakhapatnam-530045 <br>Andhra Pradesh, INDIA.<br>0891-2840501<br>registrar@gitam.edu</p>
+              </div>
+              <div class="column">
+                <h4>Hyderabad campus</h4>
+                <p>Rudraram, Patancheru mandal<br> Hyderabad-502329 <br> Telangana, INDIA.
+                08455-221200 / 1 / 2 / 3 / 4<br>hydinfo@gitam.edu</p>
+	            <a href="https://www.gitam.edu/help-desk/view/hyderabad">Contact Hyderabad campus</a>
+   	        </div>
+   	        <div class="column">
+              <h4>Visakhapatnam campus</h4>
+              <p>Gandhi nagar, Rushikonda <br> Visakhapatnam-530045<br> Andhra Pradesh, INDIA.<br>0891-2840501<br>vspinfo@gitam.edu</p>
+              <a href="https://www.gitam.edu/help-desk/view/visakhapatnam">Contact Visakhapatnam campus</a>
+            </div>
+            <div class="column">
+                <h4>Bengaluru campus</h4>
+                <p>NH 207, Nagadenehalli<br> Doddaballapur taluk <br> Bengaluru-561203, Karnataka, INDIA.<br>080-28098000 / 07<br>9108514034, 9108514028, 8971199907<br>blrinfo@gitam.edu</p>
+	            <a href="https://www.gitam.edu/help-desk/view/bengaluru">Contact Bengaluru campus</a>
+            </div>
+        </div>
+  </div>
+
+  <div class="column1 right" align="center">
+  <img src="https://staffphotos.gitam.edu/gitamlogo/GITAM_logo.png"> <br> <br> <br> <br>
+
+
+  <form style="max-width:500px;margin:auto">
+    <div class="input-container">
+      <i class="fa fa-user icon"></i>
+      <input class="input-field" type="text" placeholder="UserID" name="id" id="id">
+    </div>
+    <div class="input-container">
+        <i class="fa fa-key icon"></i>
+        <input class="input-field" type="password" placeholder="Password" name="pass" id="pass">
+      </div>
+  <button type ="submit" class="btn" onclick="document.location = validate();">LOGIN</button> <br><br>
+  <button type ="submit" class="btn1" onclick="document.location = ResetPassword();">Reset Password</button>
+  <button type ="submit" class="btn1" onclick="document.location = ContactCATS();">Contact CATS</button> <br>
+  <br> New User ? <a href="Registration.html">Sign up</a></td><br>
+  </form>
+ </div>
+</div>
+
+<script type="text/javascript">
+  function validate() {
+    var username = document.getElementById('id').value;
+    if (document.getElementById('id').value.length == 0)
+      window.alert("ID is required!");
+    else if (document.getElementById('id').value.length < 5) {
+      window.alert("ID is too short minimum 6 characters required");
+    } else if (!isNaN(document.getElementById('id').value)) {
+      window.alert("ID should not contain numbers");
+    } else if (document.getElementById('pass').value.length < 8) {
+      if (document.getElementById('pass').value.length == 0)
+        window.alert("Password is required!");
+      else
+        window.alert("Minimum 8 characters required for password");
+    } else {
+      localStorage.setItem("UserName", username);
+      setTimeout(function () {
+        window.location = "HomePage.html"
+      });
+    }
+  }
+
+  function ResetPassword(){
+    setTimeout(function () {
+      window.location = "https://login.gitam.edu/forgotpassword.aspx"
+  });
+}
+
+  function ContactCATS(){
+    setTimeout(function () {
+      window.location = "https://servicedesk.gitam.edu"
+  });
+  }
+
+  function clearLocalStorage()
+  {
+    sessionStorage.clear();
+    localStorage.clear();
+  }
+
+</script>
+
+</body>
+</html>

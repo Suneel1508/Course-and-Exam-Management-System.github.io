@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #b1040e;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+
+  }
+
+#images{
+      text-align:center;
+      }
+
+</style>
+</head>
+<body>
+
+<div style="position:relative;color:red; font-size:80px; zindex:1;" align="center">Course and Exam Management</div><br>
+
+
+<div class="navbar">
+  <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+  <a href="profile.html"><i class="fa fa-fw fa-globe"></i> Profile</a>
+  <a href="login.html"><i class="fa fa-fw fa-user"></i> Logout</a>
+</div>
+
+<br>
+
+<div class="alert">
+<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+<strong style="padding:1px font-size:50px;" align="center"><marquee>Hello <span id="UserName"></span>, you are authorized to use the following portals</marquee></strong>
+</div>
+
+<br>
+<div id="images">
+  <div class="column">
+    <a href="ExamRegistration.html">
+      <img src="https://imgk.timesnownews.com/story/Exam_Date_12.jpg?tr=w-400,h-300,fo-auto" style="width:300px;height:300px;" align="center"></a>
+    <p align="center" style="font-size:30px;"><strong>Exam Registration</strong></p>
+  </div>
+  <div class="column">
+    <a href="CourseRegistration.html">
+      <img src="https://campmanagement.com/wp-content/uploads/reporting3.jpeg" style="width:300px;height:300px;"></a>
+    <p align="center" style="font-size:30px;"><strong>Course Registration</strong></p>
+  </div>
+</div>
+<br>
+<div id="images">
+  <div class="column">
+    <a href="ExamManager.html">
+      <img src="https://images.shiksha.com/mediadata/images/articles/1590472508phpRsv4B2.jpeg" style="width:300px;height:300px;" align="center"></a>
+    <p align="center" style="font-size:30px;"><strong>Examination Manager</strong></p>
+  </div>
+  <div class="column">
+    <a href="CourseManager.html">
+      <img src="https://onlineexammanagement.com/wp-content/themes/onlineexam-theme/assets/images/online-exam.png" style="width:300px;height:300px;"></a>
+    <p align="center" style="font-size:30px;"><strong>Courses Manager</strong></p>
+  </div>
+</div>
+<script>
+document.getElementById("UserName").innerHTML = localStorage.getItem("UserName");
+</script>
+</body>
+</html>
